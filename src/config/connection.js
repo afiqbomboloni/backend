@@ -1,33 +1,13 @@
-require('dotenv').config();
-
-const {
-  DB_HOST,
-  DB_PASSWORD,
-  DB_USERNAME,
-  DB_NAME
-
-} = process.env;
-module.exports =
-{
-  "development": {
-    "username": DB_USERNAME,
-    "password": DB_PASSWORD,
-    "database": DB_NAME,
-    "host": DB_HOST,
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": DB_USERNAME,
-    "password": DB_PASSWORD,
-    "database": DB_NAME,
-    "host": DB_HOST,
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": DB_USERNAME,
-    "password": DB_PASSWORD,
-    "database": DB_NAME,
-    "host": DB_HOST,
-    "dialect": "mysql"
+module.exports = {
+  HOST: "localhost",
+  USER: "root",
+  PASSWORD: "",
+  DB: "db_ourfamy",
+  dialect: "mysql",
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
   }
-}
+};
