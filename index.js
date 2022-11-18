@@ -4,7 +4,11 @@ const cookieSession = require("cookie-session");
 
 const app = express();
 
-app.use(cors());
+var corsOptions = {
+  origin: "http://localhost:8000"
+};
+
+app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());
