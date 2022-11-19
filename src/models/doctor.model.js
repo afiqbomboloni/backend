@@ -11,7 +11,7 @@ module.exports = (sequelize, Sequelize) => {
           },
         kota: {
             type: Sequelize.STRING
-    },
+        },
         waktu: {
             type: Sequelize.STRING
         },
