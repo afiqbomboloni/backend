@@ -72,7 +72,7 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
     const id = req.params.id;
 
-    Events.update(req, res, {
+    Events.update(req.body, {
         where: {id: id}
     })
     .then(value => {
@@ -88,7 +88,7 @@ exports.update = (req, res) => {
     })
     .catch(err => {
         res.status(500).send({
-            message: 'Mohon Maaf terjadi error memperbarui event dengan id' + id
+            message: 'Mohon Maaf terjadi error memperbarui event dengan id ' + id
         });
     })
 };
