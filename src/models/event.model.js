@@ -18,6 +18,9 @@ module.exports = (sequelize, Sequelize) => {
         images: {
             type: Sequelize.STRING
         },
+        link: {
+            type: Sequelize.STRING
+        },
     });
     return Event;
 };

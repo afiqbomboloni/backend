@@ -24,11 +24,11 @@ module.exports = function (app) {
     router.get('/:id', event_model.findOne)
 
     //Update events by id admin
-    router.put('/admin/:id', [authJwt.verifyToken, authJwt.isAdmin],
+    router.put('/admin/:id', [authJwt.isAdmin],
     event_model.update)
 
     //delete events by id admin
-    router.delete('/admin/:id', [authJwt.verifyToken, authJwt.isAdmin],
+    router.delete('/admin/:id', [authJwt.isAdmin],
     event_model.delete)
 
     app.use('/api/events', router);

@@ -91,7 +91,9 @@ exports.update = (req, res) => {
             } else {
                 res.send({
                     message: `Tidak bisa update doctor dengan id=${id}`
+                   
                 })
+                // console.log($id)
             }
         })
         .catch(err => {

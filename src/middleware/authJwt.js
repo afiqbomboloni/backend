@@ -5,6 +5,7 @@ const User = db.user;
 
 verifyToken = (req, res, next) => {
   let token = req.session.token;
+  // const token = req.body.token || req.query.token || req.headers["x-access-token"]
 
   if (!token) {
     return res.status(403).send({
@@ -21,6 +22,20 @@ verifyToken = (req, res, next) => {
     req.userId = decoded.id;
     next();
   });
+  // const token = req.session.token;
+  // const authHeader = req.headers['authorization']
+  // const token = authHeader && authHeader.split(' ')[1]
+
+  // jwt.verify(token, config.secret, (err, decoded) => {
+  //   if(err) {
+  //     return res.status(403).json({
+  //       status: 'error',
+  //       message: err.message
+  //     })
+  //   }
+  //   req.user = decoded;
+  //   return next()
+  // })
 };
 
 isAdmin = async (req, res, next) => {

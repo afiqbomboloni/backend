@@ -16,7 +16,8 @@ exports.create = (req, res) => {
         kategori: req.body.kategori,
         penulis: req.body.penulis,
         judul: req.body.judul,
-        url: req.body.url
+        url: req.body.url,
+        image: req.body.image
 
     }
     // Save article in the database

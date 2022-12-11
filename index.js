@@ -25,7 +25,7 @@ app.use(
     name: "ourfamy-session",
     secret: "COOKIE_SECRET", // should use as secret environment variable
     httpOnly: true,
-    sameSite: 'strict'
+    // sameSite: 'strict'
   })
 );
 
@@ -33,12 +33,12 @@ app.use(
 const db = require("./src/models");
 const Role = db.role;
 
-db.sequelize.sync();
+// db.sequelize.sync();
 // force: true will drop the table if it already exists
-// db.sequelize.sync({force: true}).then(() => {
-//   console.log('Drop and Resync Database with { force: true }');
-//   initial();
-// });
+db.sequelize.sync({force: true}).then(() => {
+  console.log('Drop and Resync Database with { force: true }');
+  initial();
+});
 
 
 // simple route

@@ -17,6 +17,7 @@ exports.create = (req, res) => {
         deskripsi: req.body.deskripsi,
         pembicara: req.body.pembicara,
         images: req.body.images,
+        link: req.body.link,
     };
 
     //Menyimpan data Events ke database OurFamy
